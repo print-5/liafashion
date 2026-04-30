@@ -13,7 +13,7 @@ import SecondSection from "@/components/Webpage/Home/SecondSection/SecondSection
 import HotSellingSection from "@/components/Webpage/Home/HotSellingSection/HotSellingSection";
 import NewArrivalsSection from "@/components/Webpage/Home/NewArrivalsSection/NewArrivalsSection";
 import LimitedSection from "@/components/Webpage/Home/LimitedSection/LimitedSection";
-import TrendingSection from "@/components/Webpage/Home/TrendingSection/TrendingSection";
+import TrendingSection from "@/components/Webpage/Home/Trendingsection/TrendingSection";
 import PremiumSection from "@/components/Webpage/Home/PremiumSection/PremiumSection";
 
 import Categories from "@/components/Webpage/Home/Categories2/Categories";
