@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import axios from '../../../../lib/axios'
+import { optimizeCloudinary } from "@/lib/utils"
 
 const SubcategoriesSection = () => {
   const [subcategories, setSubcategories] = useState([])
@@ -72,7 +73,7 @@ const SubcategoriesSection = () => {
           >
             <div className="relative overflow-hidden rounded-xl bg-gray-100 aspect-[4/5] transition-all duration-300 group-hover:scale-105 shadow-sm group-hover:shadow-lg">
               <Image
-                src={subcategory.image || "/placeholder.svg"}
+                src={optimizeCloudinary(subcategory.image) || "/placeholder.svg"}
                 alt={subcategory.name}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"

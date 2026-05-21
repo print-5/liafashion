@@ -5,6 +5,7 @@ import { calculateCartSummary } from "@/utils/cartSummary";
 import Image from "next/image"
 import Link from "next/link"
 import { X } from "lucide-react"
+import { optimizeCloudinary } from "@/lib/utils"
 import axios from '../../../lib/axios';
 import { toast } from 'react-toastify'
 import { useUserCart } from "@/contexts/UserCartContext";
@@ -344,7 +345,7 @@ const CartPage = () => {
                             {item.image && (
                               <Link href={`/products/${item.product?.slug || item.product_id}`}> {/* Use slug if available, fallback to id */}
                                 <Image
-                                  src={item.image}
+                                  src={optimizeCloudinary(item.image)}
                                   alt={item.product_name}
                                   width={80}
                                   height={80}
@@ -483,7 +484,7 @@ const CartPage = () => {
                       {item.image && (
                         <Link href={`/products/${item.product?.slug || item.product_id}`}>
                           <Image
-                            src={item.image}
+                            src={optimizeCloudinary(item.image)}
                             alt={item.product_name}
                             width={96}
                             height={96}

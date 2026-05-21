@@ -3,6 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
+import { optimizeCloudinary } from "@/lib/utils"
 
 const ProductCard = ({ product }) => {
   const router = useRouter()
@@ -25,7 +26,7 @@ const ProductCard = ({ product }) => {
         <Link href={`/products/${id}`}>
           <div className="aspect-[3/4] relative">
             <Image
-              src={image}
+              src={optimizeCloudinary(image)}
               alt={name}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, User, ShoppingCart, X, ChevronDown, Search, Phone, Mail, Facebook, Instagram } from "lucide-react"
+import { optimizeCloudinary } from "@/lib/utils"
 import { FaThreads } from "react-icons/fa6"
 import { Button } from "@/components/ui/button"
 import {
@@ -227,7 +228,7 @@ const Navbar = () => {
                       {category.image && (
                         <div className="w-8 h-8 rounded-md overflow-hidden flex-shrink-0">
                           <Image
-                            src={category.image}
+                            src={optimizeCloudinary(category.image)}
                             alt={category.name}
                             width={32}
                             height={32}
@@ -268,7 +269,7 @@ const Navbar = () => {
                               {subcategory.image && (
                                 <div className="w-6 h-6 rounded-md overflow-hidden flex-shrink-0">
                                   <Image
-                                    src={subcategory.image}
+                                    src={optimizeCloudinary(subcategory.image)}
                                     alt={subcategory.name}
                                     width={24}
                                     height={24}
@@ -523,7 +524,7 @@ const Navbar = () => {
                               {category.image && (
                                 <div className="w-6 h-6 rounded-md overflow-hidden flex-shrink-0 shadow-sm">
                                   <Image
-                                    src={category.image}
+                                    src={optimizeCloudinary(category.image)}
                                     alt={category.name}
                                     width={24}
                                     height={24}
@@ -555,7 +556,7 @@ const Navbar = () => {
                                   {subcategory.image && (
                                     <div className="w-5 h-5 rounded-md overflow-hidden flex-shrink-0 shadow-sm">
                                       <Image
-                                        src={subcategory.image}
+                                        src={optimizeCloudinary(subcategory.image)}
                                         alt={subcategory.name}
                                         width={20}
                                         height={20}

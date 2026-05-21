@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import axios from '../../lib/axios';
 import Image from 'next/image';
+import { optimizeCloudinary } from "@/lib/utils";
 import { toast } from 'react-toastify';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -453,7 +454,7 @@ export default function Category() {
                                                 <div className="flex justify-center items-center">
                                                     <div className="w-16 h-16 md:w-20 md:h-20 bg-pink-100 rounded-md overflow-hidden">
                                                         <Image
-                                                            src={item.image}
+                                                            src={optimizeCloudinary(item.image)}
                                                             alt={item.name}
                                                             width={96}
                                                             height={96}

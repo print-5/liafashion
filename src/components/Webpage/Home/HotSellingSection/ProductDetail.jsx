@@ -6,7 +6,7 @@ import { Star, ShoppingCart, Minus, Plus, Share2, ChevronDown } from "lucide-rea
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
-import { cn } from "@/lib/utils"
+import { cn, optimizeCloudinary } from "@/lib/utils"
 import axios from '../../../../lib/axios'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -692,7 +692,7 @@ const ProductDetail = ({ productId }) => {
           <div className="space-y-3">
             <div className="relative aspect-[3/4] max-w-xs mx-auto overflow-hidden rounded-lg group">
               <Image
-                src={getAllProductImages()[selectedImage] || '/placeholder.jpg'}
+                src={optimizeCloudinary(getAllProductImages()[selectedImage]) || '/placeholder.jpg'}
                 alt={`${product?.name} in ${selectedColor?.name || ''}`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -717,7 +717,7 @@ const ProductDetail = ({ productId }) => {
         onClick={() => handleImageSelect(index)}
       >
         <Image
-          src={image || "/placeholder.jpg"}
+          src={optimizeCloudinary(image) || "/placeholder.jpg"}
           alt={`${product?.name} view ${index + 1}`}
           fill
           className="object-cover"

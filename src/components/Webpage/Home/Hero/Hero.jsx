@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import axios from '../../../../lib/axios'
+import { optimizeCloudinary } from "@/lib/utils"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 export default function HeroBanner() {
@@ -106,7 +107,7 @@ export default function HeroBanner() {
               >
                 <div className="relative w-full h-full overflow-hidden">
                   <Image
-                    src={banner.image}
+                    src={optimizeCloudinary(banner.image)}
                     alt={banner.title || "Banner"}
                     fill
                     className=""

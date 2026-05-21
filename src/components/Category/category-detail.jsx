@@ -168,7 +168,7 @@ export default function CategoryDetail({ categoryId }) {
       {/* Category Banner */}
       <div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
         <Image
-          src={category.image || "/placeholder.svg?height=350&width=1200&text=Category Banner"}
+          src={optimizeCloudinary(category.image) || "/placeholder.svg?height=350&width=1200&text=Category Banner"}
           alt={category.name}
           fill
           className="object-cover"

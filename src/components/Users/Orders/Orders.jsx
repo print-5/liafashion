@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Search, ChevronLeft, ChevronRight, Eye, X, Download } from "lucide-react";
 import Image from "next/image";
+import { optimizeCloudinary } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -690,7 +691,7 @@ const Orders = () => {
                                 <div className="flex items-center gap-3">
                                   <div className="relative w-16 h-16 rounded-md border border-gray-200 overflow-hidden bg-gray-50">
                                     <Image
-                                      src={imageUrl}
+                                      src={optimizeCloudinary(imageUrl)}
                                       alt={name}
                                       fill
                                       className="object-cover"

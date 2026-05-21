@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Navigation } from "swiper/modules"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import axios from '../../../../lib/axios'
+import { optimizeCloudinary } from "@/lib/utils"
 
 // Import Swiper styles
 import "swiper/css"
@@ -65,7 +66,7 @@ export default function CategorySection() {
       <div className="rounded-full bg-[#FFF0F5] p-1 mb-3 transition-transform hover:scale-105">
         <div className="relative w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] xl:w-[150px] xl:h-[150px] rounded-full overflow-hidden">
           <Image 
-            src={category.image || "/placeholder.svg"} 
+            src={optimizeCloudinary(category.image) || "/placeholder.svg"} 
             alt={category.name} 
             fill 
             className="object-cover" 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
+import { optimizeCloudinary } from "@/lib/utils"
 import { useRouter } from 'next/navigation'
 import { ChevronDown, Wallet } from "lucide-react"
 import { toast } from "sonner"
@@ -1157,7 +1158,7 @@ const CheckoutPage = () => {  const { cartData, isLoading, updateCartData, valid
                       <div className="flex gap-4">
                         <div className="w-20 h-20 sm:w-24 sm:h-24 relative flex-shrink-0">
                           <Image
-                            src={item.image || "/placeholder.svg"}
+                            src={optimizeCloudinary(item.image) || "/placeholder.svg"}
                             alt={item.product_name}
                             fill
                             className="object-cover rounded-md"
@@ -1223,7 +1224,7 @@ const CheckoutPage = () => {  const { cartData, isLoading, updateCartData, valid
                             <div className="flex items-center gap-3">
                               <div className="w-16 h-16 relative">
                                 <Image
-                                  src={item.image || "/placeholder.svg"}
+                                  src={optimizeCloudinary(item.image) || "/placeholder.svg"}
                                   alt={item.product_name}
                                   fill
                                   className="object-cover rounded-md"
